@@ -1,4 +1,4 @@
-var guestNights = prompt("Input number of nights")
+var guestHotel= prompt("Choose your Hotel");
 
 class Hotel {
     hotelName = "";
@@ -12,7 +12,6 @@ class Hotel {
 
     showAvailability(){
          if (this.numberOfNights > guestNights) {
-            //  console.log(OK); 
             document.getElementById("output").innerHTML = '<button>I\'ll reserve</button>'; 
          } else {
              alert(`Sorry, no available nights for ${this.hotelName}`)
@@ -20,10 +19,18 @@ class Hotel {
     }
 }
 
-var hotel1 = new Hotel("Marriott", "Graz");
-var hotel2 = new Hotel("Hilton", "Wien");
 
+var hotel1 = new Hotel("Marriott");
+var hotel2 = new Hotel("Hilton");
 
+if (hotel1.hotelName === guestHotel) {
+    guestNights = prompt("Input number of nights");
+    hotel1.showAvailability();
+}
+
+if (hotel2.hotelName === guestHotel) {
+    hotel2.showAvailability();
+}
 
 
 
